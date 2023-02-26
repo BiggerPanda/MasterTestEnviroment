@@ -3,8 +3,10 @@ using Zenject;
 
 public class TasksInstaller : MonoInstaller
 {
+    [SerializeField] private TaskManager taskManager;
+
     public override void InstallBindings()
     {
-        Container.Bind<TaskManager>().AsSingle();
+        Container.BindInstance(taskManager).AsSingle();
     }
 }

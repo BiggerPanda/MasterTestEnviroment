@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class TaskManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private List<Task> tasks = new List<Task>();
+
+    public void AddTask(Task task)
     {
-        
+        tasks.Add(task);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RemoveTask(Task task)
     {
-        
+        tasks.Remove(task);
+    }
+
+    public bool AreAllTasksComplete()
+    {
+        foreach (Task task in tasks)
+        {
+            if (!task.isComplete)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

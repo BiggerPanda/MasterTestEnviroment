@@ -14,6 +14,7 @@ public abstract class Task : MonoBehaviour
     private void Initialize(TaskManager _taskManager)
     {
         taskManager = _taskManager;
+        taskManager.AddTask(this);
     }
 
 
