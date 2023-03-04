@@ -13,11 +13,7 @@ public class PuzzleTask : Task
     {
         puzzlePieces = new List<PuzzlePiece>(puzzlePieceContainer.GetComponentsInChildren<PuzzlePiece>());
     }
-
-    private void Start()
-    {
-        
-    }
+    
 
     protected override void checkIfIsComplete()
     {
