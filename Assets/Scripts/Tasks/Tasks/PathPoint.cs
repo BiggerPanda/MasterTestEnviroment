@@ -30,12 +30,16 @@ public class PathPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        Debug.Log("Triggered");
+
+        if (!other.CompareTag("Player"))
         {
-            if(followPathTask.IncreasePathIndex(pointID))
-            {
-                PlayerMovedPastThisPoint();
-            }
+            return;
+        }
+
+        if (followPathTask.IncreasePathIndex(pointID))
+        {
+            PlayerMovedPastThisPoint();
         }
     }
 

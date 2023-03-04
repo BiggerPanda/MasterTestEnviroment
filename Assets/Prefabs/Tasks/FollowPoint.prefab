@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5599621637299549438}
   - component: {fileID: 5824557462664083264}
   - component: {fileID: 7275136262957646534}
-  - component: {fileID: 3559440064396296698}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -84,27 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3559440064396296698
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300192772808938270}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1546745847344327203
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5243446999827095158}
   - component: {fileID: 6168801052878800802}
+  - component: {fileID: 5928885877352934720}
   m_Layer: 0
   m_Name: FollowPoint
   m_TagString: Untagged
@@ -137,7 +116,7 @@ Transform:
   - {fileID: 5599621637299549438}
   - {fileID: 4423893185782629993}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6168801052878800802
 MonoBehaviour:
@@ -153,6 +132,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 7275136262957646534}
   pointIDText: {fileID: 1088645237868196205}
+--- !u!65 &5928885877352934720
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546745847344327203}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6564407319462794979
 GameObject:
   m_ObjectHideFlags: 0

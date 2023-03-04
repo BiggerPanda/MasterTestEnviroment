@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -9,8 +10,8 @@ public class FollowPathTask : Task
     [SerializeField] private GameObject highlightObject = null;
     [SerializeField] private GameObject currentPathPoint = null;
     [SerializeField] private float radius = 1f;
-    private List<PathPoint> pathPoints = new List<PathPoint>();
-    public int currentPathIndex = 0;
+    [ReadOnly] private List<PathPoint> pathPoints = new List<PathPoint>();
+    [ReadOnly] private int currentPathIndexToApproach = 0;
 
     private void Start()
     {
@@ -24,7 +25,7 @@ public class FollowPathTask : Task
 
     protected override void checkIfIsComplete()
     {
-        if (currentPathIndex >= path.Spline.Count)
+        if (currentPathIndexToApproach >= path.Spline.Count)
         {
             isComplete = true;
         }
@@ -32,9 +33,9 @@ public class FollowPathTask : Task
 
     public bool IncreasePathIndex(int pointIndex)
     {
-        if (pointIndex == currentPathIndex+1)
+        if (pointIndex == currentPathIndexToApproach)
         {
-            currentPathIndex++;
+            currentPathIndexToApproach++;
             return true;
         }
 
